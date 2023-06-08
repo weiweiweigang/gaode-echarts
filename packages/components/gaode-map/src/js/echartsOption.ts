@@ -7,9 +7,19 @@
  * @FilePath: \gaode-echarts\packages\components\gaode-map\src\js\echartsOption.ts
  */
 
-import { getLinesBusData } from "./data";
+export interface AmapOpion extends AMap.MapOptions {
+  // 启用resize
+  resizeEnable?: boolean,
+  // 移动过程中实时渲染 默认为true
+  renderOnMoving?: boolean,
+  // 设置 ECharts 图层是否可交互 默认为 true
+  echartsLayerInteractive?: boolean, 
+  // 是否启用大数据模式 默认为 false
+  largeMode?: boolean,  
+}
 
-export function getEchartsOption() {
+
+export function getEchartsOption(amapOption: AmapOpion) {
   return {
     // 加载 amap 组件
     amap: {
@@ -31,15 +41,16 @@ export function getEchartsOption() {
       // 设置 ECharts 图层是否可交互 默认为 true
       // 设置为 false 可实现高德地图自身图层交互
       // 此配置项从 v1.9.0 起开始支持
-      echartsLayerInteractive: false,
+      echartsLayerInteractive: true,
       features: ['bg', 'building', 'road'],
       // features Array<String> (default ['bg','point','road','building'])
       // 是否启用大数据模式 默认为 false
       // 此配置项从 v1.9.0 起开始支持
-      largeMode: false
+      largeMode: false,
       // 说明：如果想要添加卫星、路网等图层
       // 暂时先不要使用layers配置，因为存在Bug
       // 建议使用amap.add的方式，使用方式参见最下方代码
+      ...amapOption,
     },
     series: [],
   //   series: [{

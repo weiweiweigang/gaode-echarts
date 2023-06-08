@@ -18,6 +18,11 @@ import {
   ArrayToObj,
   LineIsShowOnSquare
 } from './utils/tool'
+import { RenderData } from './utils/topologyEcharts';
+
+// 类型
+import { AMapType, } from '../gaode-echarts';
+import { TopologyLine } from './dataModel/topologyType/topologyLineType';
 
 // 以数组的结构保存组件，便于遍历
 const components = [
@@ -27,10 +32,19 @@ const components = [
 
 // 用于按需导入
 export {
+  // 组件
   gaodeMap,
+
+  // 工具
   mercatorToLngLat,
   ArrayToObj,
-  LineIsShowOnSquare
+  LineIsShowOnSquare,
+  RenderData,
+}
+
+export type {
+  AMapType,
+  TopologyLine as TopologyLineOfGaodeEcharts
 }
 
 // 定义 install 方法
