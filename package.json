@@ -1,0 +1,50 @@
+{
+  "name": "gaode-echarts",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "types": "gaode-echarts.d.ts",
+  "author": "Strayer",
+  "description": "高德地图+echarts的迁徙图(路线流向图)",
+  "keywords": [
+    "vue3",
+    "gaode",
+    "echarts",
+    "typescript"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "dist/gaode-echarts.umd.js",
+  "module": "dist/gaode-echarts.es.js",
+  "files": [
+    "dist/*",
+    "gaode-echarts.d.ts"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@amap/amap-jsapi-types": "^0.0.13",
+    "@types/proj4": "^2.5.2",
+    "echarts": "^5.4.2",
+    "echarts-extension-amap": "^1.11.0",
+    "proj4": "^2.9.0",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "sass": "^1.62.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9",
+    "vue-tsc": "^1.4.2"
+  }
+}
