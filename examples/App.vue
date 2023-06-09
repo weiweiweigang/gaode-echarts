@@ -18,14 +18,14 @@
 <script setup lang="ts">
 import { ref, shallowRef, onMounted } from 'vue';
 import { RenderData, gaodeMap, mercatorToLngLat } from '../packages'
-import type { TopologyLineOfGaodeEcharts } from '../packages'
 import { ECharts } from 'echarts';
+import type { TopologyLine } from '../packages/dataModel/topologyType/topologyLineType';
 
 const gaodeMapObj = ref<InstanceType<typeof gaodeMap>>();
 const mapObj = shallowRef<AMap.Map | null>(null);
 const myChart = shallowRef<ECharts | null>(null);
 const echartsLayerDiv = shallowRef<HTMLDivElement | null>(null);
-const topologyLines = shallowRef<TopologyLineOfGaodeEcharts []>([])
+const topologyLines = shallowRef<TopologyLine []>([])
 
 onMounted(() => {
   getData();

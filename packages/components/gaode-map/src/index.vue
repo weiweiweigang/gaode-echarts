@@ -2,7 +2,7 @@
  * @Author: Strayer
  * @Date: 2023-05-31
  * @LastEditors: Strayer
- * @LastEditTime: 2023-06-08
+ * @LastEditTime: 2023-06-09
  * @Description: 
  * @FilePath: \gaode-echarts\packages\components\gaode-map\src\index.vue
 -->
@@ -17,7 +17,8 @@ import { onMounted, shallowRef } from 'vue';
 import * as echarts from 'echarts'
 import { AmapOpion, getEchartsOption } from "./js/echartsOption";
 import { ECharts } from "echarts";
-import type { AMapType } from '../../..';
+
+type AMapType = typeof AMap
 
 const props = defineProps<{
   boxId: string,

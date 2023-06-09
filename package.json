@@ -1,9 +1,8 @@
 {
   "name": "gaode-echarts",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.6",
   "type": "module",
-  "types": "gaode-echarts.d.ts",
   "author": "Strayer",
   "description": "高德地图+echarts的迁徙图(路线流向图)",
   "keywords": [
@@ -20,9 +19,11 @@
   },
   "main": "dist/gaode-echarts.umd.js",
   "module": "dist/gaode-echarts.es.js",
+  "types": "types/index.d.ts",
   "files": [
     "dist/*",
-    "gaode-echarts.d.ts"
+    "packages",
+    "types"
   ],
   "scripts": {
     "dev": "vite",
