@@ -65,7 +65,6 @@ function getData() {
 }
 
 function renderTopology() {
-  console.log('%c [ 111 ]-60', 'font-size:13px; background:#0b749d; color:#4fb8e1;', );
   if(!myChart.value || !mapObj.value) return;
   RenderData(myChart.value, {
     renderName: [ 'topologyLines' ],
