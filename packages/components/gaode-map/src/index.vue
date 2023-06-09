@@ -133,6 +133,7 @@ mapLoadedParam({
 
 <style lang="scss" scoped>
 .gaodeMapContainer {
+  position: relative;
   width: 100%;
   height: 100%;
 }
