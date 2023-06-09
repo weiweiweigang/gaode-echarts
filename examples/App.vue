@@ -6,8 +6,8 @@
     <gaodeMap 
       ref="gaodeMapObj"
       boxId="box1"
-      gaode-key="1210df51ce6f2cd0218440f8b2da10e1"
-      security-js-code="b7be4ed5f538964d6cbd94015c233f12"
+      :gaode-key="gaodeSecret.key"
+      :security-js-code="gaodeSecret.secretKey"
       :amapOption=" {
         center: [120.67326402074302, 31.343713847380716]
       }"
@@ -20,12 +20,15 @@ import { ref, shallowRef, onMounted } from 'vue';
 import { RenderData, gaodeMap, mercatorToLngLat } from '../packages'
 import { ECharts } from 'echarts';
 import type { TopologyLine } from '../packages/dataModel/topologyType/topologyLineType';
+// 这里是作者存 高德key和秘钥的地方。用户需要自己去高德地图开发者平台上申请 之后拿过来替换掉
+import gaodeSecret from '../gaodeSecret.json'
 
 const gaodeMapObj = ref<InstanceType<typeof gaodeMap>>();
 const mapObj = shallowRef<AMap.Map | null>(null);
 const myChart = shallowRef<ECharts | null>(null);
 const echartsLayerDiv = shallowRef<HTMLDivElement | null>(null);
 const topologyLines = shallowRef<TopologyLine []>([])
+
 
 onMounted(() => {
   getData();
