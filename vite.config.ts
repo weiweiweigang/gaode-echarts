@@ -3,12 +3,13 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx' // pnpm add -D @vitejs/plugin-vue-jsx
 import path from "path";
+import dts from 'vite-plugin-dts'
 
 const resolve = (dir) => path.join(__dirname, dir);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx({})],
+  plugins: [vue(), vueJsx({}), dts()],
   resolve: {
     alias: {
       "@": resolve("examples"),
